@@ -3,3 +3,9 @@
     <NuxtPage />
   </div>
 </template>
+
+<style>
+* {
+  direction: rtl;
+}
+</style>

@@ -1,13 +1,13 @@
 <template>
   <div class="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
-    <div class="hidden border-r bg-muted/40 md:block">
+    <div class="hidden border-e bg-muted/40 md:block">
       <div class="flex h-full max-h-screen flex-col gap-2">
         <div class="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
           <a href="/" class="flex items-center gap-2 font-semibold">
             <Package2 class="h-6 w-6" />
-            <span class="">Acme Inc</span>
+            <span class="">داشبوردي</span>
           </a>
-          <Button variant="outline" size="icon" class="ml-auto h-8 w-8">
+          <Button variant="outline" size="icon" class="ms-auto h-8 w-8">
             <Bell class="h-4 w-4" />
             <span class="sr-only">Toggle notifications</span>
           </Button>
@@ -23,7 +23,7 @@
               class="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary">
               <ShoppingCart class="h-4 w-4" />
               Orders
-              <Badge class="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
+              <Badge class="ms-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
                 6
               </Badge>
             </a>
@@ -86,7 +86,7 @@
                 class="mx-[-0.65rem] flex items-center gap-4 rounded-xl bg-muted px-3 py-2 text-foreground hover:text-foreground">
                 <ShoppingCart class="h-5 w-5" />
                 Orders
-                <Badge class="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
+                <Badge class="ms-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
                   6
                 </Badge>
               </a>
@@ -127,9 +127,9 @@
         <div class="w-full flex-1">
           <form>
             <div class="relative">
-              <Search class="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+              <Search class="absolute start-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
               <Input type="search" placeholder="Search products..."
-                class="w-full appearance-none bg-background pl-8 shadow-none md:w-2/3 lg:w-1/3" />
+                class="w-full appearance-none bg-background ps-8 shadow-none md:w-2/3 lg:w-1/3" />
             </div>
           </form>
         </div>

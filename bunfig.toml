@@ -1,0 +1,2 @@
+[install.scopes]
+"@enabapp" = { token = "$NPM_TOKEN", url = "https://npm.pkg.github.com" }

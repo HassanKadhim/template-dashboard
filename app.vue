@@ -6,8 +6,4 @@
   </div>
 </template>
 
-<style>
-* {
-  direction: rtl;
-}
-</style>
+<style></style>

@@ -1,5 +1,5 @@
 <template>
-  sdasd
+  <AppTiptapEditor />
 </template>
 
 <script lang="ts" setup>

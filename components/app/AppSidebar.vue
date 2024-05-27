@@ -1,4 +1,16 @@
 <template>
+  <div class="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
+    <NuxtLink to="/" class="flex items-center gap-2 font-semibold">
+      <Package2 class="h-6 w-6" />
+      <span class="">
+        {{ appName }}
+      </span>
+    </NuxtLink>
+    <Button variant="outline" size="icon" class="ms-auto h-8 w-8">
+      <Bell class="h-4 w-4" />
+      <span class="sr-only">Toggle notifications</span>
+    </Button>
+  </div>
   <div class="flex-1">
     <nav class="grid items-start px-2 text-sm font-medium lg:px-4">
       <NuxtLink
@@ -7,10 +19,11 @@
       >
         <Home class="h-4 w-4" />
         {{ item.title }}
-        <Badge v-if="item.badge"
-          class="ms-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full"
+        <Badge
+          v-if="item.badge"
+          class="ms-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-xl"
         >
-         {{ item.badge }}
+          {{ item.badge }}
         </Badge>
       </NuxtLink>
     </nav>
@@ -30,7 +43,7 @@ import {
   ShoppingCart,
   Users,
 } from "lucide-vue-next";
-const { sideBarItems } = useAppConfig();
+const { sideBarItems, appName } = useAppConfig();
 </script>
 
 <style></style>

@@ -71,6 +71,7 @@ const {
 const handleLogin = async () => {
   isLoading.value = true;
   if (!form.value.email || !form.value.password) {
+    toast.error("Please fill in all fields");
     isLoading.value = false;
     return;
   }
@@ -78,6 +79,9 @@ const handleLogin = async () => {
   try {
     //call the login function
     await execute();
+    if (error.value) {
+      toast.error("Invalid email or password");
+    }
   } catch (error) {
     isLoading.value = false;
     console.error(error);

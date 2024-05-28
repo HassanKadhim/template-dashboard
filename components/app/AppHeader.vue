@@ -10,6 +10,7 @@
             class="absolute start-2.5 top-2.5 h-4 w-4 text-muted-foreground"
           />
           <Input
+            v-model="searchQuery"
             type="search"
             placeholder="Search..."
             class="w-full appearance-none bg-background ps-8 shadow-none md:w-2/3 lg:w-1/3"
@@ -38,6 +39,20 @@
 
 <script lang="ts" setup>
 import { CircleUser, Search } from "lucide-vue-next";
+const router = useRouter();
+
+const searchQuery = ref("");
+
+watch(searchQuery, (query) => {
+  if (query) {
+    router.push({
+      path: router.currentRoute.value.path,
+      query: { query: query },
+    });
+  } else {
+    router.push({ path: router.currentRoute.value.path });
+  }
+});
 </script>
 
 <style></style>

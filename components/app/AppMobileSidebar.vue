@@ -9,7 +9,7 @@
     <SheetContent side="left" class="flex flex-col">
       <nav class="grid gap-2 text-lg font-medium">
         <a href="#" class="flex items-center gap-2 text-lg font-semibold">
-          <Package2 class="h-6 w-6" />
+          <NuxtImg src="/favicon.svg" class="h-6 w-6" />
           <span class="sr-only">Acme Inc</span>
         </a>
         <a
@@ -54,17 +54,7 @@
         </a>
       </nav>
       <div class="mt-auto">
-        <Card>
-          <CardHeader>
-            <CardTitle>Upgrade to Pro</CardTitle>
-            <CardDescription>
-              Unlock all features and get unlimited access to our support team.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Button size="sm" class="w-full"> Upgrade </Button>
-          </CardContent>
-        </Card>
+        <Button size="sm" class="w-full"> Upgrade </Button>
       </div>
     </SheetContent>
   </Sheet>

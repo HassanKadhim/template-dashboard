@@ -1,6 +1,5 @@
 <template>
   <AppTiptapEditor />
-  {{useFileUrl('favicon.ico', 'favicon.ico', 'favicon.ico')}}
 </template>
 
 <script lang="ts" setup>

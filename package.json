@@ -19,6 +19,7 @@
     "lucide-vue-next": "^0.379.0",
     "nuxt": "^3.11.2",
     "nuxt-tiptap-editor": "^1.1.2",
+    "pocketbase": "^0.21.2",
     "radix-vue": "^1.8.1",
     "shadcn-nuxt": "^0.10.4",
     "tailwind-merge": "^2.3.0",

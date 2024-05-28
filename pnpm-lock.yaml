@@ -1,4 +1,4 @@
-lockfileVersion: '6.0'
+lockfileVersion: '6.1'
 
 settings:
   autoInstallPeers: true
@@ -32,6 +32,9 @@ dependencies:
   nuxt-tiptap-editor:
     specifier: ^1.1.2
     version: 1.1.2(@tiptap/core@2.4.0)(@tiptap/extension-code-block@2.4.0)(vue@3.4.27)
+  pocketbase:
+    specifier: ^0.21.2
+    version: 0.21.2
   radix-vue:
     specifier: ^1.8.1
     version: 1.8.1(vue@3.4.27)
@@ -6088,6 +6091,10 @@ packages:
       confbox: 0.1.7
       mlly: 1.7.0
       pathe: 1.1.2
+
+  /pocketbase@0.21.2:
+    resolution: {integrity: sha512-XZdgU9dEv3TPjexDRHy5feYrZrJhWqxTki8ClFGpsnC51G3Qkwoa/U7CVG72jYcLDP3p0HiEhRUUevnlryWkHA==}
+    dev: false
 
   /portfinder@1.0.32:
     resolution: {integrity: sha512-on2ZJVVDXRADWE6jnQaX0ioEylzgBpQk8r55NE4wjXW1ZxO+BgDlY6DXwj20i0V8eB4SenDQ00WEaxfiIQPcxg==}

@@ -20,7 +20,12 @@
         </div>
         <div class="grid gap-2">
           <Label for="email">Email</Label>
-          <Input v-model="form.email" id="email" type="email" placeholder="m@example.com" />
+          <Input
+            v-model="form.email"
+            id="email"
+            type="text"
+            placeholder="email or user name"
+          />
         </div>
         <div class="grid gap-2">
           <Label for="password">Password</Label>
@@ -28,8 +33,9 @@
         </div>
       </CardContent>
       <CardFooter>
-        <Button class="w-full">
-          Login
+        <Button @click="handleLogin()" class="w-full">
+          <IconSpinner v-if="isLoading" class="w-8 h-8" />
+          <span v-else> Login </span>
         </Button>
       </CardFooter>
     </Card>
@@ -47,6 +53,38 @@ const form = ref({
   email: "",
   password: "",
 });
+
+//function to handle the login form submission
+const {
+  data: authData,
+  error,
+  execute,
+} = await useAsyncData(async (nuxtApp) => {
+  // fetch and return all "example" records...
+  const records = await nuxtApp.$pb.collection("users").authWithPassword(
+    form.value.email,
+    form.value.password
+  );
+  return structuredClone(records);
+});
+
+const handleLogin = async () => {
+  isLoading.value = true;
+  if (!form.value.email || !form.value.password) {
+    isLoading.value = false;
+    return;
+  }
+
+  try {
+    //call the login function
+    await execute();
+  } catch (error) {
+    isLoading.value = false;
+    console.error(error);
+  } finally {
+    isLoading.value = false;
+  }
+};
 </script>
 
 <style></style>

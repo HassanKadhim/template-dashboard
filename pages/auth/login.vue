@@ -44,8 +44,10 @@
 
 <script lang="ts" setup>
 definePageMeta({
-  layout: "guest",
+  middleware: "guest",
 });
+
+
 
 //variables for the login form
 const isLoading = ref(false);
@@ -59,9 +61,8 @@ const {
   data: authData,
   error,
   execute,
-} = await useAsyncData(async (nuxtApp) => {
-  // fetch and return all "example" records...
-  const records = await nuxtApp.$pb.collection("users").authWithPassword(
+} = await useAsyncData(async () => {
+  const records = await pb().collection("users").authWithPassword(
     form.value.email,
     form.value.password
   );
@@ -75,10 +76,12 @@ const handleLogin = async () => {
     isLoading.value = false;
     return;
   }
-
   try {
     //call the login function
     await execute();
+    if (authData.value) {
+      navigateTo("/");
+    }
     if (error.value) {
       toast.error("Invalid email or password");
     }

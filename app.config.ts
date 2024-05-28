@@ -8,11 +8,5 @@ export default defineAppConfig({
       route: "/",
       icon: "book-open",
     },
-    {
-      title: "Components",
-      route: "/components",
-      icon: "collection",
-      badge: "New",
-    },
   ] as SideBarItem[],
 });

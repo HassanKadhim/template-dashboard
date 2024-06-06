@@ -20,12 +20,7 @@
         </div>
         <div class="grid gap-2">
           <Label for="email">Email</Label>
-          <Input
-            v-model="form.email"
-            id="email"
-            type="text"
-            placeholder="email or user name"
-          />
+          <Input v-model="form.email" id="email" type="text" placeholder="email or user name" />
         </div>
         <div class="grid gap-2">
           <Label for="password">Password</Label>
@@ -62,7 +57,7 @@ const {
   error,
   execute,
 } = await useAsyncData(async () => {
-  const records = await pb().collection("users").authWithPassword(
+  const records = await pb().admins.authWithPassword(
     form.value.email,
     form.value.password
   );
